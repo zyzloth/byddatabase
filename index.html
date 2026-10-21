@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BYD Bilimlar bazasi</title>
+  <meta name="description" content="BYD avtosaloni: reglamentlar, tuzilma va xodimlar uchun savol-javob">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2316202b'/%3E%3Cpath d='M9 10h9a4 4 0 0 1 0 8H9zM9 18h10a4 4 0 0 1 0 8H9z' fill='none' stroke='%23fff' stroke-width='2.4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="Bosh sahifa">
+      <span class="brand-mark">B</span>
+      <span class="brand-text"><b>BYD</b> Bilimlar bazasi</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#/" data-nav="home">Bosh sahifa</a>
+      <a href="#/jarayonlar" data-nav="jarayon">Reglamentlar</a>
+      <a href="#/tuzilma" data-nav="tuzilma">Tuzilma</a>
+      <a href="#/yordamchi" data-nav="yordamchi">Savol-javob</a>
+    </nav>
+    <div class="topbar-right">
+      <button class="role-pill" id="rolePill" type="button" title="Lavozimingizni tanlang">
+        <svg viewBox="0 0 24 24" class="ico"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        <span id="rolePillText">Lavozimni tanlang</span>
+      </button>
+      <button class="icon-btn" id="themeBtn" type="button" title="Mavzu" aria-label="Yorug'/qorong'i mavzu">
+        <svg viewBox="0 0 24 24" class="ico"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Menyu">
+        <svg viewBox="0 0 24 24" class="ico"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div id="drawerTitle"></div>
+      <button class="icon-btn" id="drawerClose" aria-label="Yopish"><svg viewBox="0 0 24 24" class="ico"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <dialog id="roleDialog" class="dialog">
+    <form method="dialog">
+      <h3>Lavozimingiz qaysi?</h3>
+      <p class="muted">Tanlangan lavozim bo'yicha diagrammalarda sizning qadamlaringiz ajratib ko'rsatiladi.</p>
+      <input type="search" id="roleFilter" class="input" placeholder="Qidirish: menejer, kassir, usta…">
+      <div class="role-list" id="roleList"></div>
+      <div class="dialog-actions">
+        <button value="clear" class="btn ghost" id="roleClear">Tanlovni bekor qilish</button>
+        <button value="close" class="btn">Yopish</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/data/processes.js"></script>
+  <script src="js/data/roles.js"></script>
+  <script src="js/data/faq.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/diagram.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
